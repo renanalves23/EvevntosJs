@@ -40,6 +40,8 @@ for (let prop in carro) {
     elementos2[j].style['font-weight'] = "bold";
   };
 
+  
+
 
 
 
