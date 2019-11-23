@@ -38,6 +38,53 @@ document.getElementById('anos_copa').innerHTML = "";
 
  };
 
+/*  3) Informe nos campos abaixo duas notas e o total de faltas do aluno e depois solte o resultado no local apropriado. 
+ Sendo que:
+
+    O aluno para ser aprovado precisa ter, no mínimo 70% de presença (o total de aulas é 20)
+    
+    O aluno para ser aprovado precisa ter média maior ou igual a 6.5
+    
+    Caso o aluno não seja aprovado, o programa precisa dizer se foi por motivo de média insuficiente,
+ por faltas ou pelos dois motivos.
+ */
+
  
+
+//botao
+const botaoCalcular = document.getElementById('calcular');
+
+const btn_calc = botaoCalcular.onclick = () =>{
+  //ao clicar no botao, vai pegar o valor passado nas notas
+  const nota1 = parseFloat(document.getElementById('nota1').value);
+  const nota2 = parseFloat(document.getElementById('nota2').value);
+  
+  const media_notas = (nota1 + nota2) / 2;
+
+  const num_faltas = parseFloat(document.getElementById('n_faltas').value);
+  const presenca = (20 - num_faltas) / 20; //espera-se minimo de 0.7 para ser aprovado
+
+
+var situacao;
+
+    if(media_notas >= 6.5 && presenca >= 0.7) {
+      //aprovado por ambos
+      situacao = 'Aprovado plenamente!';
+    }else if(media_notas < 6.5 && presenca <0.7) {
+      //reprovado ambos 
+      situação = 'Reprovado por faltas e por média!';
+   }else if(media_notas < 6.5) {
+      situacao = 'Reprovado pela nota'
+   }else if(presenca < 0.7){
+     situacao = 'Reprovado  por faltas'
+   }
+   document.getElementById('result').innerHTML = situacao;
+ };
+
+// const num_faltas = document.getElementById('n_faltas').value;
+// document.getElementById('result').innerHTML = `Média igual a ${media}. Aprovado!`;
+
+// id nota1   nota2   n_faltas  button id calcular
+//resultado id result
 
 
