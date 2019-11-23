@@ -88,3 +88,79 @@ var situacao;
 //resultado id result
 
 
+
+/* 4) Temos abaixo uma lista de vendas de um curso. Cada venda é um objeto cujas 
+propriedades guardam informações sobre a venda, como o nome do aluno que comprou,
+ a data, o preço e se houve pedido de reembolso.
+ */
+
+var vendas_cursos = [
+
+  {
+      'aluno': 'Emmanuel Gomes',
+      'data': '10/06/2018',
+      'valor': 34.99,
+      'reembolso': null
+      
+  },
+
+  {
+      'aluno': 'Carla Dias',
+      'data': '10/06/2018',
+      'valor': 29.99,
+      'reembolso': null
+      
+  },
+
+  {
+      'aluno': 'Rafael Marques',
+      'data': '11/06/2018',
+      'valor': 39.99,
+      'reembolso': '13/06/2018'
+      
+  },
+
+  {
+      'aluno': 'Maria Isabel Pereira',
+      'data': '11/06/2018',
+      'valor': 29.99,
+      'reembolso': null
+      
+  },
+
+  {
+      'aluno': 'Andre Luis Silva',
+      'data': '12/06/2018',
+      'valor': 34.99,
+      'reembolso': null
+      
+  }
+
+];
+
+ let total_vendas = 0;
+
+for (let j = 0; j < vendas_cursos.length; j++) {
+      if(vendas_cursos[j].reembolso == null) {
+          total_vendas += vendas_cursos[j].valor;
+
+          var linhaHtml = "";
+          linhaHtml += `<tr>`;
+          linhaHtml += `<td> ${vendas_cursos[j].aluno} </td>`;
+          linhaHtml += `<td> ${vendas_cursos[j].data} </td>`;
+          linhaHtml += `<td> ${vendas_cursos[j].valor} </td>`;
+          linhaHtml += `</tr>`;
+
+          document.getElementById('vendas_cursos').innerHTML += linhaHtml;
+
+      }
+}
+
+document.getElementById('total_vendas').innerHTML = total_vendas;
+
+/* Solte as vendas na tabela abaixo, mas não inclua as vendas que tiveram reembolso pedido. 
+Calcule também o total de vendas e solte na última linha da tabela. */
+
+//vendas e o total delas
+
+
