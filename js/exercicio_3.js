@@ -22,4 +22,22 @@ const btn_conv = botao_conv.onclick = () => {
         document.getElementById("temp_fahr").innerHTML = "<strong>" + fahrenheit + "</strong>"
   };
 
+  //EXERCICIO 2
+
+/*   2) Solte dentro do elemento abaixo uma lista de todos os anos em que houve a Copa do Mundo de Futebol,
+   desde 1930 até 2018. Lembre-se que a copa do mundo ocorre de 4 em 4 anos.
+ */
+
+//  const listaCopa = document.getElementById('anos_copa');
+//zerar o textoo antes de colocar
+document.getElementById('anos_copa').innerHTML = "";
+//loop
+    for(var i = 1930; i < 2018; i+=4){
+      //document.getElementById('anos_copa').innerHTML += i; //nao esquecer do <li>
+      document.getElementById('anos_copa').innerHTML += `<li> ${i} </li> `; //nao esquecer do <li>
+
+ };
+
+ 
+
 
